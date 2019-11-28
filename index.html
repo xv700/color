@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>colorpicker</title>
+<script src="./colorpicker.js"></script>
+<style>
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.picker {
+	border: 1px solid black;
+	background-color:white;
+	margin: 0 auto;
+	width: 300px;
+	height:20px;
+	cursor: pointer;
+	position: relative;
+	top: 50%; 
+	transform: translateY(-50%);
+	text-align: center
+}
+	</style>
+</head>
+<body>
+
+<div class="picker" id="color-picker">改变颜色，改变世界</div>
+</body>
+<script>
+	var obj = document.getElementById("picker");
+	var a = Colorpicker.create({
+		el: "color-picker",
+		color: "#000fff",
+		change: function (elem, hex) {
+			console.log(elem, hex)
+			document.body.style.backgroundColor = hex;
+		}
+	})
+</script>
+</html>
